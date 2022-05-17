@@ -19,10 +19,10 @@ c. O/P -> Print the String with User Name
 template = 'Hello <<username>>, How are you?'
 
 username = input("Enter Name: ")
-value = template.replace("<<username>>", username)
 
 if(len(username)<3):
     print("username have minimum 3 character")
 else:
-    print(value)
+    print()
 
+print("'Hello {}, How are you?'".format(username))
