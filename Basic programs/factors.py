@@ -7,16 +7,49 @@
 
 """
 
-def factor(number):
+"""
+    
+6. Factors
+a. Desc -> Computes the prime factorization of N using brute force.
+b. I/P -> Number to find the prime factors
+c. Logic -> Traverse till i*i <= N instead of i <= N for efficiency.
+d. O/P -> Print the prime factors of number N.
+    
+"""
 
-    i = 2
-    while i * i <= number:
-        if number % i:
-            i += 1
+
+def prime_factor(num):
+    ## Finding all factors of the given number
+    
+    factors_list = []
+    factor = 2
+    while(factor <= num):
+        if(num % factor == 0):
+            factors_list.append(factor)
+        factor = factor + 1
+        
+    print(factors_list)
+    
+    ## Finding which of the factors are prime
+    
+    prime_factors = []
+    for i in factors_list:
+        for j in range(2,i):
+            if(i % j == 0):
+                break
         else:
-            number //= i
-    return number
-
-
-userinput = int(input("Enter an Number:"))
-print(" Factors : " + str(factor(userinput)))
+            prime_factors.append(i)
+    
+    ## Prints results        
+    num = str(num)
+    prime_factors = str(prime_factors)
+    print("The prime factors of " + num + " are " + prime_factors)
+    
+    
+## Takes user input and calls on the prime factorization function                
+while True:
+    a = int(input('give me a number greater than 1 or enter 0 to quit: '))
+    if (a == 0):
+        break
+    prime_factor(a)
+                
