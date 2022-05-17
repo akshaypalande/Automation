@@ -48,7 +48,9 @@ for number in range(0, flip) :
 # Calculating head and tail percentage
       
 tailPercentage = (tail/flip)*100
-headPercentage = (head/flip)*100
+headPercentage = 100 - tailPercentage
+
+# calculate head percentage and then minus tail.
 
 
 # printing the percentage value of flips for head and tail
