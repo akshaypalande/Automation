@@ -4,7 +4,7 @@
 @Date: 2022-05-14 5:30:00
 @Last Modified By: Akshay Palande
 @Last Modified Date: 2022-05-14 5:30:00
-@Title: Leap year program
+@Title: Power of 2 program
 
 """
 
@@ -31,3 +31,4 @@ if(userinput >= 0 & userinput <= 31):
     power_table(userinput)
 else:
     print("Please Enter Valid Input ")
+    
