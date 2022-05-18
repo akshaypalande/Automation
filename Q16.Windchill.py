@@ -22,7 +22,8 @@ than 120 or less than 3 (you may assume that the values you get are in that rang
     
 
 """
-
+import math
+import sys
 
 def calculateWindChill(temperatureValue, windSpeed):
     """
@@ -40,8 +41,19 @@ def calculateWindChill(temperatureValue, windSpeed):
 try:
     temperatureValue = int(input("Enter temperatute value :"))
     windSpeed = int(input("Enter wind speed :"))
+    
+ 
+# below code runs in command line interface with
+
+#  temperatureValue = int(sys.argv[1])
+# windSpeed = int(sys.argv[2])
+
+    
 except ValueError:
     print("Enter proper value")
 
 windChill = calculateWindChill(temperatureValue, windSpeed)
 print("The calculated WindChill = ", windChill)
+
+
+# command line argument
