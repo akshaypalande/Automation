@@ -21,29 +21,17 @@ d. O/P -> Print the elapsed time.
 import time
 
 def time_convert(sec):
-    mins = sec // 60
-    sec = sec % 60
-    hours = mins // 60
-    mins = mins % 60
+  mins = sec // 60
+  sec = sec % 60
+  hours = mins // 60
+  mins = mins % 60
+  print("Time Lapsed = {0}:{1}:{2}".format(int(hours),int(mins),sec))
 
-    print("Time Lapsed = {0}:{1}:{2}".format(hours, mins, sec))
-
-
-
-input("press enter to start: ")
+input("Press Enter to start")
 start_time = time.time()
-input("press enter to stop: ")
+
+input("Press Enter to stop")
 end_time = time.time()
+
 time_lapsed = end_time - start_time
-
-if __name__ == '__main__':
-    time_convert(time_lapsed)
-    
-    
-"""
-
-The code starts by inputting the start time and stops when the end time is reached.
- The code then calculates how much time has passed in seconds, minutes, and hours.
- The code calculates the time elapsed in seconds between two points in time.
- 
-"""
+time_convert(time_lapsed)
