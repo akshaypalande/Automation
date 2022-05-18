@@ -17,8 +17,7 @@ d. O/P -> Print function to print 2 Dimensional Array. In Java use PrintWriter w
 OutputStreamWriter to print the output to the screen.
     
 """
-
-def matrix():
+def two_dimensional_array():
     """
     Description:
         This function is used for printing 2D array. 
@@ -26,15 +25,30 @@ def matrix():
         also element of array from user.    
     """
 
-rows = int(input("Enter Number of Rows: "))
-cols = int(input("Enter number of columns: "))
+try:
 
-arr = [[0 for row in range(rows)] for column in range(cols)]
+        row = int(input("Enter the number of rows:"))
+        col = int(input("Enter the number of columns:"))
 
-for A in range(rows):
-        for B in range(cols):
-            arr[A][B] = A*B
+        # for storing 2D array of type list
+        matrix = []
+        print("Enter the entries row wise:")
 
-        print(arr)
+        for i in range(row):  # loop for row
+            array = []
+            for j in range(col):  # loop for column
+              array.append(int(input()))   # inserting input into blank array
+            matrix.append(array)  # appending array with matrix
 
-matrix()
+        # for loop for printing the 2D array
+        print("The 2D array is given below:")
+        for i in range(row):
+            for j in range(col):
+                print(matrix[i][j], end="  ")
+            print()
+
+except ValueError:
+        print("Enter a valid integer input")
+        two_dimensional_array()
+
+two_dimensional_array()
