@@ -7,24 +7,34 @@
 """
 
 """
-    
-Write a program Distance.java that takes two integer command-line arguments x
+
+Write a program Distance.python that takes two integer command-line arguments x
 and y and prints the Euclidean distance from the point (x, y) to the origin (0, 0). The
 formulae to calculate distance = sqrt(x*x + y*y). Use Math.power function
     
 """
 
+
 import math
+import sys
+def calculateDistance(x, y):
+
+    return math.sqrt(math.pow(x, 2) + math.pow(y, 2))
+
+# Taking input from user
+
 x = int(input("Enter the value of x: "))
 y = int(input("Enter the value of y: "))
 
+# x = int(sys.argv[1]) 
+# y  = int(sys.argv[2])
+# Calling Function
+dist = calculateDistance(x,y)
+    
 
-def calculateDistance():
+print("The Euclidean Distance between points is: ", dist)
 
-    dist = math.sqrt(math.pow(x, 2) + math.pow(y, 2))
-
-    print("The Euclidean Distance between points is: ", dist)
-calculateDistance()
+# implement commond arugument
 
 """
 
