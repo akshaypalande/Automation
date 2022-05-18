@@ -23,44 +23,65 @@ d. O/P -> Print Number of Wins and Percentage of Win and Loss.
 
 import random
 
-def gambler_problem():
-      
-  """
-
+def start_gamble(stake, goal):
+    """
     Description:
-        This function Simulates a gambler who start with stake and place fair 1 bets until
-        he/she goes broke (i.e. has no money) or reach $goal. Keeps track of the number of
-        times he/she wins and the number of bets he/she makes. Run the experiment N
-        times, averages the results, print the results.
+        This function is used for getting bet result.
+        Here a player start with stake and goal and play the game
+        untill his pocket is empty or he has achieved his goal.
+    Parameter:
+        It takes two parameter stake is a starting amount of a player,
+        And goal is the winning amount or target amount to win by player.
+    """
+    try:
+    # defining variables here
+        win = 0
+        loss = 0
+        totalGambles = 0
 
-  """      
+        while not(stake == 0 or stake == goal): # game will go on untill stake is 0 or goal is reached.
+            gamble = random.randint(0, 1)
+            totalGambles += 1
+            if gamble == 0:
+                stake += 1
+                win += 1
 
+            else:
+                stake -= 1
+                loss += 1
 
-stake=int(input(" Enter the stake amount in rupees = "))
-goal=int(input(" Enter the amount you want to win = "))
-bet=int(input(" Enter the number of bets you want to make = "))
+        print(" You won ", win, " times ")
+        print(" You Lost ", loss, " times ")
+        print(" Your Total Gamble Played ", totalGambles, " times")
+        # Getting the Percentage of Winning
+        win_percentage = float((win / totalGambles) * 100)
+        print(" Win Percent%", win_percentage)
+        # Getting the Percentage of Loosing
+        loss_percentage = float((loss / totalGambles) * 100)
+        print(" Loss Percent%", loss_percentage)
 
-won=lost=gamble=0
+    except Exception as e:
+        print(e)
 
-while(stake >= 0 and stake <= goal and gamble < bet):
-  gamble+=1
-  
-  gambler=random.randint(0, 1)
-  
-  if gambler==0:
-    won+=1
-    stake=stake+1
-  else:
-        lost+=1
-        stake=-1
-        
+if __name__ == "__main__":
 
-print("Number Of Times you Won = ",won)
-print("Number Of Times You Lost = ",lost)
-print("Percentage Of Win = ", (won/bet)*100) 
-print("Percentage Of Loss = ", (lost/bet)*100)
-print("Number Of Bets Made = ", bet) 
+    print("*********************************************")
+    print("          Welcome To Gambling World     ")
+    print("**********************************************")
 
+    try:
+        stake = int(input("Enter the starting stake: "))
+        while stake < 2:
+            stake = int(input("Please start at least with 2$ : "))
+
+        goal = int(input("Enter a winning goal amount: "))
+        while goal < stake:
+            goal = int(input("Dear enter an amount greater than your stake!: "))
+
+    except ValueError:
+        print("Enter a valid integer value")
+
+start_gamble(stake, goal)
 
 """
 The code starts by declaring variables.
