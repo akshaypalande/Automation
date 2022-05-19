@@ -22,36 +22,8 @@ process distinct coupons.
 
 import random
 
-def distinct_coupons():
-  """
-    Description:
-        This function is used to generate random and unique coupon numbers.
-        User input is given for number and range of coupon numbers.
-        Random fuction is used to generate random coupon numbers.
-    
-    """         
-coupon = []   #empty list
-random_numbers=0  #no.of random numbers needed to generate distinct coupons
+number = int(input("\nEnter number of unique coupon numbers to generate :"))
+print( )
+print(random.sample(range(1, 9), number))
 
-try:
-    
-    number = int(input("\nHow many digit numbers you want to generate as distinct coupon number : "))
-    print("Distinct Coupon Numbers Generated")
-    for element in range(number):
-                coupon_number = random.randint(0,9)
-                if coupon_number not in coupon:
-                    coupon.append(coupon_number)  #adding the distinct random number gnerated to list 
-                    print(coupon_number)
-                    random_numbers+=1
-                    
-  
-                    
-    else:
-        pass           
-    #print(distinct_coupons)
-    print(random_numbers,end = " ")
-except Exception as err:
-            print("Not A Valid Number",err)
-distinct_coupons() 
-print()
 
